@@ -20,15 +20,17 @@
 		"commands": [
 			{
 				"command": "extension.compileMarkTeXToHTML",
-				"title": "Compile MarkTex to HTML"
+				"title": "MarkTeX: Compile MarkTeX file to HTML",
+				"when": "editorLangId == markdown"
 			},
 			{
 				"command": "extension.previewMarkTeX",
-				"title": "Preview MarkTeX"
+				"title": "MarkTeX: Preview",
+				"when": "editorLangId == markdown"
 			},
 			{
 				"command": "extension.configurateMarkTeXExtension",
-				"title": "Configurate MarkTeX extension"
+				"title": "MarkTeX: Configurat extension"
 			}
 		]
 	},
