@@ -20,7 +20,7 @@ export function registerCommands<T extends CommandsContext>(parent: T): {
     let { context, engine } = parent;
 
     context.subscriptions.push(...[
-        new CompileMarkTeXToHTML(),
+        new CompileMarkTeXToHTML(engine),
         new PreviewMarkTeX(context, engine),
         new ConfigurateMarkTeXExtension(),
     ].map<vscode.Disposable>((command: Command) =>

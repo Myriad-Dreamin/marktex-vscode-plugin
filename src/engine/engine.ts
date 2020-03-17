@@ -1,15 +1,20 @@
 
-import {myriad, Renderer} from 'marktex.js';
+import {myriad, Parser, Renderer} from 'marktex.js';
 
 import  * as vscode from 'vscode';
 
 export class MarkdownEngine {
     private readonly naiveRenderer: Renderer;
+    private readonly naiveParser: Parser;
 
     constructor() {
         this.naiveRenderer = myriad.newRenderer({
             parserOptions: myriad.newRules({enableLaTeX: true}),
             rendererOptions: {enableLaTeX: true},
+        });
+
+        this.naiveParser = myriad.newParser({
+            parserOptions: myriad.newRules({enableLaTeX: true}),
         });
     }
 
@@ -19,6 +24,15 @@ export class MarkdownEngine {
         } catch (e) {
             vscode.window.showErrorMessage(e.message);
             return '';
+        }
+    }
+
+    debug(s: string): string {
+        try {
+            return JSON.stringify(
+                this.naiveParser.parseBlockElements(myriad.newStringStream(s)), undefined, 2);
+        } catch (e) {
+            return '{}';
         }
     }
 
