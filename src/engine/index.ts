@@ -1,4 +1,4 @@
 
 
-export {Engine} from './engine';
+export { MarkdownEngine } from './engine';
 
