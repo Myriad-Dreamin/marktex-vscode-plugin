@@ -10,13 +10,18 @@ export function activate(context: vscode.ExtensionContext) {
 
 	if (newRegisterMonad(context)
 		.then((ctx) => registerLocaleProvider({ _this: { context: ctx }, context: ctx }))
-		.then((ctx) => registerCommands({
-			_this: { localeProvider: ctx.localeProvider, ...ctx.parent._this },
+		.then((ctx) => registerLanguageProviders({
+			_this: { ...ctx.parent._this, ...{
+			} },
 			context: ctx.parent._this.context,
 		}))
-		.then((ctx) => registerLanguageProviders({
-			_this: ctx.parent._this,
+		.then((ctx) => registerCommands({
+			_this: { ...ctx.parent._this, ...{
+				localeProvider: ctx.localeProvider,
+				markdownEngine: ctx.engine,
+			} },
 			context: ctx.parent._this.context,
+			engine: ctx.engine,
 		}))
 		.success()) {
 		vscode.window.showInformationMessage('Congratulations, the extension "MarkTeX" is now active!');

@@ -1,5 +1,8 @@
 
 import * as vscode from 'vscode';
+import { MarkdownEngine } from '../engine';
+import { LocaleProvider } from './locale';
+import { FileSystemProvider } from './file-system';
 
 
 interface LanguageRegisterContext {
@@ -8,10 +11,10 @@ interface LanguageRegisterContext {
 
 export function registerLanguageProviders<T extends LanguageRegisterContext>(parent: T): {
     parent: LanguageRegisterContext;
+    engine: MarkdownEngine,
 } | undefined {
 
-
-    return { parent };
+    return { parent, engine: new MarkdownEngine() };
 }
 
 interface LocaleRegisterContext {
@@ -32,8 +35,14 @@ export function registerLocaleProvider<T extends LocaleRegisterContext>(parent: 
     return { parent, localeProvider };
 }
 
-export interface LocaleProvider {
 
+export function registerFileSystemProvider<T extends LocaleRegisterContext>(parent: T): {
+    parent: LocaleRegisterContext;
+    fileSystemProvider: FileSystemProvider;
+} | undefined {
+
+    const fileSystemProvider = new FileSystemProvider();
+
+    return { parent, fileSystemProvider };
 }
-
 
