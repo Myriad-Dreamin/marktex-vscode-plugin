@@ -911,10 +911,10 @@ log-symbols@3.0.0:
   dependencies:
     chalk "^2.4.2"
 
-marktex.js@^0.3.0-2:
-  version "0.3.0-2"
-  resolved "https://registry.yarnpkg.com/marktex.js/-/marktex.js-0.3.0-2.tgz#effdf21fcaa68d069e9b4c76135d0ea14526c6e8"
-  integrity sha512-4Fne/qQ/Vnrdv9GfEX5ygglGSUGAFFaEg/AR96rmCS3hA19FSueezsP75oye/bh4yLUP97Ofom0x62+PwrY0nw==
+marktex.js@0.3.1-4:
+  version "0.3.1-4"
+  resolved "https://registry.yarnpkg.com/marktex.js/-/marktex.js-0.3.1-4.tgz#780e7671692708df6443e3473d6fd583659f4013"
+  integrity sha512-51H9MgT1j2R28mQO/Dh8k71xAy6hbHdmUWcuuxUhSSV21xWN7kbOs3bTUZdiFJkkszVTfj4Uea/MeTsIRS9O4Q==
 
 mimic-fn@^2.1.0:
   version "2.1.0"
