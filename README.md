@@ -1,65 +1,52 @@
 # marktex
 
-This is the README for your extension "marktex". After writing up a brief description, we recommend including the following sections.
+markdown rendered by MarkTex.js for Visual Studio Code
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Example 1 Latex style new command
 
-For example if there is an image subfolder under your extension project workspace:
+```
+Latex style new command
+=======================
 
-\!\[feature X\]\(images/feature-x.png\)
+\newcommand{\sstriling}[2]{\left\{#1 \atop #2\right\}}
+\newcommand{\striling}[2]{{#1 \brack #2}}
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+
+## Stirling numbers
+
+Stirling cycle numbers $\striling{n}{m}$ are defined  by
+$$ \ln^m(1+z) = m! \sum_n (-1)^{n+m} \striling{n}{m} {z^n\over n!}$$
+The numbers $(-1)^{n+m}\striling{n}{m}$ are also called Stirling numbers of the first kind.
+Stirling subset numbers $\sstriling{n}{m}$, also called Stirling numbers
+of the second kind, are defined by
+$$ \left( e^z-1\right)^m = m! \sum_n\sstriling {n}{ m} {z^n\over n!}$$
+and 2-associated Stirling subset numbers $\sstriling{n}{m}_{\ge 2}$ are
+defined by 
+
+$$ \left( e^z-1-z\right)^m = m!\sum_n\sstriling {n}{ m}_{\!\ge 2} {z^n\over n!}$$
+```
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
++ vscode version >= 1.42.1
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+Todo
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
++ `$` symbols for math blocks in inline style cannot be close together
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
 
-### 1.0.0
+### 0.1.0
 
-Initial release of ...
+implement two commands:
 
-### 1.0.1
++ preview MarkTeX files in vscode
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
++ compile MarkTeX files in vscode
