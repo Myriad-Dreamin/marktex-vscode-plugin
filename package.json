@@ -4,7 +4,7 @@
 	"publisher": "myriaddreamin",
 	"repository": "github.com/Myriad-Dreamin/marktex-vscode-plugin",
 	"description": "MarkTeX plugin for Visual Studio Code",
-	"version": "0.1.0-2",
+	"version": "0.1.1",
 	"license": "MIT",
 	"engines": {
 		"vscode": "^1.42.1"
